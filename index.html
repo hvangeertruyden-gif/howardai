@@ -58,6 +58,9 @@
             font-weight: 700;
             transition: all 0.2s ease;
             display: inline-block;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
         }
 
         .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(235, 199, 54, 0.3); }
@@ -73,7 +76,7 @@
         header h1 { font-size: 3.5rem; margin-bottom: 1rem; letter-spacing: -1px; }
         header p { font-size: 1.25rem; color: var(--primary); margin-bottom: 3rem; font-weight: 500; }
 
-        /* Features */
+        /* Sections */
         .section { padding: 100px 0; }
         .section-title { text-align: center; margin-bottom: 4rem; font-size: 2.5rem; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
@@ -88,7 +91,7 @@
 
         .card h3 { margin-bottom: 1rem; font-size: 1.5rem; }
 
-        /* Pricing Table Styling */
+        /* Pricing Table */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -112,13 +115,34 @@
             z-index: 2;
         }
 
-        .pricing-card h3 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; color: var(--grey); margin-bottom: 1rem; }
         .price-upfront { font-size: 3rem; font-weight: 700; display: block; margin-bottom: 0.5rem; }
         .price-monthly { font-size: 1.25rem; color: var(--grey); display: block; margin-bottom: 2rem; }
         
         .specs { list-style: none; text-align: left; margin-bottom: 2rem; border-top: 1px solid #eee; padding-top: 2rem; }
         .specs li { margin-bottom: 1rem; display: flex; align-items: center; }
         .specs li::before { content: "✓"; color: var(--primary); font-weight: bold; margin-right: 10px; }
+
+        /* Form Styling */
+        .waitlist-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: left;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; color: var(--grey); letter-spacing: 0.5px; }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
 
         /* Footer */
         footer {
@@ -133,6 +157,7 @@
         @media (max-width: 768px) {
             header h1 { font-size: 2.5rem; }
             .pricing-card.featured { transform: scale(1); }
+            .waitlist-form { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
@@ -171,13 +196,13 @@
                 </div>
                 <div class="card">
                     <h3>Vertically Integrated</h3>
-                    <p>From white-glove installation to local Houston support, we handle the hardware, software, and maintenance. No tinkering required.</p>
+                    <p>From white-glove installation to local Houston support, we handle the hardware, software, and maintenance.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section" style="background-color: #f0f0f0;">
+    <section class="section" style="background-color: #f0f0f0;" id="pricing">
         <div class="container">
             <h2 class="section-title">Hardware Tiers</h2>
             <div class="pricing-grid">
@@ -189,7 +214,6 @@
                         <li>RTX-Class Hardware</li>
                         <li>Houston Installation</li>
                         <li>Local Phone Support</li>
-                        <li>Automated Security Checks</li>
                     </ul>
                     <a href="#waitlist" class="btn" style="width:100%">Reserve Home</a>
                 </div>
@@ -203,7 +227,6 @@
                         <li>Mid-Tier GPU Server</li>
                         <li>Small Business Support</li>
                         <li>Technician Dispatch Inc.</li>
-                        <li>API Update Management</li>
                     </ul>
                     <a href="#waitlist" class="btn" style="width:100%">Reserve Pro</a>
                 </div>
@@ -216,7 +239,6 @@
                         <li>DGX Spark-Class Hardware</li>
                         <li>High-Demand Offices</li>
                         <li>Priority Houston Dispatch</li>
-                        <li>Full Fleet Compatibility</li>
                     </ul>
                     <a href="#waitlist" class="btn" style="width:100%">Reserve Enterprise</a>
                 </div>
@@ -224,11 +246,36 @@
         </div>
     </section>
 
-    <section id="waitlist" class="section" style="text-align:center;">
-        <div class="container">
-            <h2>Secure Your Local Intelligence</h2>
-            <p style="margin-bottom: 3rem; color: var(--grey);">We are building to order. Join the Houston waitlist for our next deployment cycle.</p>
-            <a href="mailto:hello@howardai.us" class="btn" style="padding: 1.5rem 3rem; font-size: 1.2rem;">Email to Reserve</a>
+    <section id="waitlist" class="section">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">Join the Houston Waitlist</h2>
+            <p style="margin-bottom: 3rem; color: var(--grey);">Secure your position for our next hardware deployment cycle.</p>
+            
+            <form action="https://formspree.io/f/xaqazeer" method="POST" class="waitlist-form">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="name" placeholder="First and Last Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email-address">Email Address</label>
+                    <input type="email" id="email-address" name="email" placeholder="howard@howardai.us" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone-number">Phone Number</label>
+                    <input type="tel" id="phone-number" name="phone" placeholder="713-555-0123" required>
+                </div>
+                <div class="form-group">
+                    <label for="tier-select">Interested Tier</label>
+                    <select id="tier-select" name="tier">
+                        <option value="Home">Howard Home ($3,000)</option>
+                        <option value="Pro" selected>Howard Pro ($6,000)</option>
+                        <option value="Enterprise">Howard Enterprise ($8,000)</option>
+                    </select>
+                </div>
+                <input type="hidden" name="_subject" value="New Howard AI Waitlist Submission">
+                
+                <button type="submit" class="btn" style="width: 100%; padding: 1.2rem; font-size: 1.1rem; margin-top: 1rem;">Reserve My Howard</button>
+            </form>
         </div>
     </section>
 
