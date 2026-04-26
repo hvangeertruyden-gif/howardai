@@ -28,11 +28,11 @@
             background-color: var(--off-white);
             color: var(--black);
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
 
-        /* Navigation */
         nav {
             padding: 1.5rem 0;
             display: flex;
@@ -45,7 +45,7 @@
             z-index: 100;
         }
 
-        .logo img { height: 40px; }
+        .logo img { height: 40px; width: auto; }
 
         .btn {
             background: var(--primary);
@@ -59,7 +59,6 @@
 
         .btn:hover { transform: translateY(-2px); }
 
-        /* Hero Section */
         header {
             padding: 100px 0;
             background: var(--black);
@@ -70,7 +69,6 @@
         header h1 { font-size: 3.5rem; margin-bottom: 1rem; }
         header p { font-size: 1.25rem; color: var(--primary); margin-bottom: 2rem; }
 
-        /* Features */
         .section { padding: 80px 0; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
 
@@ -84,7 +82,6 @@
 
         .card h3 { margin-bottom: 1rem; color: var(--black); }
 
-        /* Tiers */
         .tier-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
         .tier-table th, .tier-table td { 
             padding: 1.5rem; 
@@ -93,11 +90,10 @@
         }
         .tier-table th { background: var(--warm-grey); color: var(--white); }
 
-        /* Footer */
         footer {
             background: var(--warm-grey);
             color: var(--white);
-            padding: 40px 0;
+            padding: 60px 0;
             text-align: center;
         }
 
@@ -124,7 +120,7 @@
             <h1>Assistant Intelligence.</h1>
             <p>Locally Hosted. Privately Owned. Houston Proud.</p>
             <div style="margin-top: 2rem;">
-                <img src="Untitled design (8).png" alt="Howard Icon" style="width: 120px; filter: drop-shadow(0 0 10px var(--primary));">
+                <img src="favicon.png" alt="Howard Icon" style="width: 120px; filter: drop-shadow(0 0 10px var(--primary));">
             </div>
         </div>
     </header>
@@ -196,7 +192,7 @@
 
     <footer>
         <div class="container">
-            <img src="logo-dark.png" alt="Howard AI Logo" style="height: 30px; margin-bottom: 1rem;">
+            <img src="logo-dark.png" alt="Howard AI Logo" style="height: 40px; width: auto; margin-bottom: 1rem;">
             <p>&copy; 2026 Howard AI. A Houston Technology Company.</p>
             <p class="tagline">Assistant Intelligence</p>
         </div>
