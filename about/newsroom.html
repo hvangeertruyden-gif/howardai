@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Howard AI Newsroom</title>
+
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="container navbar">
+
+      <a href="/index.html" class="logo">
+        <div class="logo-icon">H</div>
+        <span>howard</span>
+      </a>
+
+      <nav>
+        <a href="/index.html">Home</a>
+        <a href="/about/index.html">About</a>
+        <a href="/store/index.html">Store</a>
+        <a href="/support/index.html">Support</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+
+  <section class="section">
+    <div class="container">
+
+      <div class="hero-tag">
+        Howard AI Newsroom
+      </div>
+
+      <h1 class="section-title">
+        Latest Updates
+      </h1>
+
+      <p class="section-subtitle">
+        Product updates, launch milestones, Houston expansion news, and company announcements.
+      </p>
+
+      <div id="news-container" class="news-grid">
+        <!-- News loads here -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="container footer-content">
+
+      <div class="logo">
+        <div class="logo-icon">H</div>
+        <span>howard</span>
+      </div>
+
+      <p>
+        © 2026 Howard AI — Assistant Intelligence
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+
+  <script>
+    async function loadNews() {
+      try {
+
+        const response = await fetch('/about/news.json');
+        const articles = await response.json();
+
+        const container = document.getElementById('news-container');
+
+        articles.forEach(article => {
+
+          const card = document.createElement('div');
+          card.classList.add('news-card');
+
+          card.innerHTML = `
+            <div class="news-meta">
+              ${article.date}
+            </div>
+
+            <h2>
+              ${article.title}
+            </h2>
+
+            <p>
+              ${article.description}
+            </p>
+          `;
+
+          container.appendChild(card);
+
+        });
+
+      } catch (error) {
+
+        console.error('Error loading newsroom:', error);
+
+        document.getElementById('news-container').innerHTML = `
+          <div class="news-card">
+            <h2>Unable to load updates.</h2>
+            <p>Please try again later.</p>
+          </div>
+        `;
+      }
+    }
+
+    loadNews();
+  </script>
+
+</body>
+</html>
