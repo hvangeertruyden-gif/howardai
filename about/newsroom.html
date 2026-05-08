@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Howard AI Newsroom</title>
+  <title>Howard AI</title>
 
-  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../assets/style.css" />
 </head>
 
 <body>
@@ -16,111 +17,86 @@
   <header>
     <div class="container navbar">
 
-      <a href="/index.html" class="logo">
-        <div class="logo-icon">H</div>
-        <span>howard</span>
+      <a href="../index.html" class="logo">
+        <img src="../logo-light.png" alt="Howard AI Logo">
       </a>
 
-      <nav>
-        <a href="/index.html">Home</a>
-        <a href="/about/index.html">About</a>
-        <a href="/store/index.html">Store</a>
-        <a href="/support/index.html">Support</a>
+      <nav class="main-nav">
+
+        <div class="nav-item">
+          <a href="../index.html">Home</a>
+        </div>
+
+        <div class="nav-item">
+          <a href="#">About</a>
+
+          <div class="dropdown">
+            <a href="../about/index.html">Overview</a>
+            <a href="../about/howardai.html">Howard AI</a>
+            <a href="../about/leadership.html">Leadership</a>
+            <a href="../about/newsroom.html">Newsroom</a>
+            <a href="../about/investors.html">Investors</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="#">Store</a>
+
+          <div class="dropdown">
+            <a href="../store/index.html">All Products</a>
+            <a href="../store/home.html">Howard Home</a>
+            <a href="../store/pro.html">Howard Pro</a>
+            <a href="../store/enterprise.html">Enterprise</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="#">Support</a>
+
+          <div class="dropdown">
+            <a href="../support/index.html">Support Hub</a>
+            <a href="../support/contact.html">Contact</a>
+            <a href="../support/about-support.html">About Support</a>
+            <a href="../support/faqs.html">FAQs</a>
+          </div>
+        </div>
+
       </nav>
 
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- PLACEHOLDER -->
 
-  <section class="section">
-    <div class="container">
+  <section class="hero">
+    <div class="container hero-content">
 
       <div class="hero-tag">
-        Howard AI Newsroom
+        Howard AI
       </div>
 
-      <h1 class="section-title">
-        Latest Updates
+      <h1>
+        Coming Soon.
       </h1>
 
-      <p class="section-subtitle">
-        Product updates, launch milestones, Houston expansion news, and company announcements.
+      <p>
+        This section of the Howard AI website is currently under development. More information, features, and updates will be added soon.
       </p>
 
-      <div id="news-container" class="news-grid">
-        <!-- News loads here -->
+      <div class="hero-buttons">
+
+        <a href="../index.html" class="btn btn-primary">
+          Return Home
+        </a>
+
+        <a href="../about/newsroom.html" class="btn btn-secondary">
+          Visit Newsroom
+        </a>
+
       </div>
 
     </div>
   </section>
-
-  <!-- FOOTER -->
-
-  <footer>
-    <div class="container footer-content">
-
-      <div class="logo">
-        <div class="logo-icon">H</div>
-        <span>howard</span>
-      </div>
-
-      <p>
-        © 2026 Howard AI — Assistant Intelligence
-      </p>
-
-    </div>
-  </footer>
-
-  <!-- SCRIPT -->
-
-  <script>
-    async function loadNews() {
-      try {
-
-        const response = await fetch('/about/news.json');
-        const articles = await response.json();
-
-        const container = document.getElementById('news-container');
-
-        articles.forEach(article => {
-
-          const card = document.createElement('div');
-          card.classList.add('news-card');
-
-          card.innerHTML = `
-            <div class="news-meta">
-              ${article.date}
-            </div>
-
-            <h2>
-              ${article.title}
-            </h2>
-
-            <p>
-              ${article.description}
-            </p>
-          `;
-
-          container.appendChild(card);
-
-        });
-
-      } catch (error) {
-
-        console.error('Error loading newsroom:', error);
-
-        document.getElementById('news-container').innerHTML = `
-          <div class="news-card">
-            <h2>Unable to load updates.</h2>
-            <p>Please try again later.</p>
-          </div>
-        `;
-      }
-    }
-
-    loadNews();
-  </script>
 
 </body>
 </html>
