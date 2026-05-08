@@ -452,11 +452,13 @@ footer {
 /* ---------- EXECUTIVES ---------- */
 
 .executive-grid {
-  display: grid;
+  display: flex;
 
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-content: center;
 
-  gap: 40px;
+  gap: 60px;
+
+  flex-wrap: wrap;
 }
 
 .executive-card {
