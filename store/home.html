@@ -19,276 +19,72 @@
       --warm-text:#4A4439;
       --off-warm:#F9F7F2; 
       --soft-border: rgba(74, 68, 57, 0.08);
+      --mid: #888;
     }
 
-    .home-page { 
-      font-family:'DM Sans', sans-serif; 
-      background: var(--off-warm); 
-      color: var(--warm-text);
-      overflow-x: hidden;
-    }
-
+    .home-page { font-family:'DM Sans', sans-serif; background: var(--off-warm); color: var(--warm-text); overflow-x: hidden; }
     .home-container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
 
-    /* HERO - WARM & WELCOMING */
-    .hero-home { 
-      padding: 120px 0 80px; 
-      text-align: center;
-    }
-    
-    .home-badge {
-      display: inline-block;
-      padding: 0.5rem 1.2rem;
-      background: var(--wht);
-      border: 1px solid var(--soft-border);
-      border-radius: 100px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--y);
-      margin-bottom: 2rem;
-    }
+    /* HERO */
+    .hero-home { padding: 120px 0 80px; text-align: center; }
+    .home-badge { display: inline-block; padding: 0.5rem 1.2rem; background: var(--wht); border: 1px solid var(--soft-border); border-radius: 100px; font-size: 0.85rem; font-weight: 600; color: var(--y); margin-bottom: 2rem; }
+    .hero-home h1 { font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 700; letter-spacing: -0.04em; line-height: 1; color: var(--blk); margin-bottom: 1.5rem; }
+    .hero-home p { font-size: 1.25rem; line-height: 1.6; max-width: 600px; margin: 0 auto 3rem; opacity: 0.9; }
 
-    .hero-home h1 {
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      line-height: 1;
-      color: var(--blk);
-      margin-bottom: 1.5rem;
-    }
+    /* CARD: CHAT STREAM */
+    .conversation-stream { display: flex; flex-direction: column; gap: 1.5rem; max-width: 700px; margin: 0 auto 120px; }
+    .bubble { padding: 1.25rem 1.75rem; border-radius: 25px; font-size: 1.1rem; line-height: 1.4; max-width: 75%; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+    .bubble.user { background: var(--wht); align-self: flex-start; border-bottom-left-radius: 4px; border: 1px solid var(--soft-border); }
+    .bubble.howard { background: var(--y); color: var(--blk); align-self: flex-end; border-bottom-right-radius: 4px; font-weight: 500; }
 
-    .hero-home p {
-      font-size: 1.25rem;
-      line-height: 1.6;
-      max-width: 600px;
-      margin: 0 auto 3rem;
-      color: var(--warm-text);
-      opacity: 0.9;
-    }
+    /* CARD: COMMUNICATION GATEWAYS */
+    .methods-grid-section { background: var(--wht); border-radius: 40px; padding: 5rem 4rem; border: 1px solid var(--soft-border); margin-bottom: 120px; text-align: center; }
+    .methods-grid-section h2 { font-size: 2.2rem; color: var(--blk); margin-bottom: 3.5rem; letter-spacing: -0.02em; }
+    .logo-cloud { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 3rem; align-items: center; }
+    .logo-item { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
+    .logo-item i, .logo-item img { font-size: 35px; height: 35px; color: var(--warm-text); }
+    .logo-item span { font-size: 0.85rem; font-weight: 600; opacity: 0.7; }
 
-    /* UPDATED HARDWARE SHOWCASE - SIDE BY SIDE */
-    .hardware-showcase {
-      background: var(--wht);
-      border-radius: 40px;
-      padding: 3rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.03);
-      display: flex;
-      flex-direction: row; /* Changed to row */
-      align-items: center;
-      justify-content: space-between;
-      gap: 3rem;
-      margin-bottom: 100px;
-      border: 1px solid var(--soft-border);
-      overflow: hidden;
-    }
+    /* CARD: ROLES (SCROLL) */
+    .roles-section { height: 100vh; display: flex; justify-content: center; position: relative; }
+    .roles-container { position: sticky; top: 40%; text-align: center; width: 100%; }
+    .roles-intro { font-size: 1rem; color: var(--mid); margin-bottom: 0.5rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+    .role-title { font-size: clamp(2.5rem, 8vw, 5.5rem); font-weight: 700; color: var(--blk); transition: opacity 0.2s ease, transform 0.2s ease; }
 
-    .hardware-text {
-      flex: 1;
-      text-align: left; /* Left align text */
-    }
+    /* CARD: COMPARISON TABLE */
+    .comparison-section { margin-bottom: 120px; background: var(--wht); padding: 4rem; border-radius: 40px; border: 1px solid var(--soft-border); }
+    .comparison-section h2 { text-align: center; margin-bottom: 3rem; font-size: 2.5rem; }
+    .comp-table { width: 100%; border-collapse: collapse; text-align: left; }
+    .comp-table th, .comp-table td { padding: 1.5rem; border-bottom: 1px solid var(--soft-border); }
+    .comp-table th { font-weight: 700; color: var(--blk); }
+    .comp-table i { color: var(--y); font-size: 1.2rem; }
 
-    .hardware-image-side {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    /* CARD: INSTALLED IN PERSON (SIDE-BY-SIDE) */
+    .hardware-showcase { background: var(--wht); border-radius: 40px; padding: 3rem; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 3rem; margin-bottom: 120px; border: 1px solid var(--soft-border); }
+    .hardware-text { flex: 1; text-align: left; }
+    .hardware-image-side { flex: 1; }
+    .large-square-img { width: 100%; aspect-ratio: 1/1; background: #eee; border-radius: 20px; object-fit: cover; }
+    .howard-box-mockup { width: 100px; height: 100px; background: var(--y); border-radius: 25px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
 
-    /* Large Square Image Placeholder */
-    .large-square-img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background: #f0f0f0; /* Grey placeholder */
-      border-radius: 20px;
-      object-fit: cover;
-      display: block;
-    }
+    /* VALUE GRID */
+    .value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-bottom: 120px; }
+    .value-item h3 { font-size: 1.75rem; margin-bottom: 1rem; color: var(--blk); }
+    .value-item p { line-height: 1.7; font-size: 1.1rem; opacity: 0.8; }
 
-    .howard-box-mockup {
-      width: 120px; /* Sized down slightly for side layout */
-      height: 120px;
-      background: var(--y);
-      border-radius: 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 20px rgba(235, 199, 54, 0.2);
-      margin-bottom: 1.5rem;
-    }
+    .peace-section { background: var(--blk); color: var(--wht); padding: 100px 0; border-radius: 60px; margin-bottom: 60px; text-align: center; }
+    .btn-homey { display: inline-block; padding: 1.2rem 2.5rem; background: var(--y); color: var(--blk); border-radius: 100px; font-weight: 700; text-decoration: none; }
 
-    /* THE TASK BUBBLES - CONVERSATIONAL */
-    .conversation-stream {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      max-width: 600px;
-      margin: 0 auto 100px;
-    }
-
-    .bubble {
-      padding: 1.25rem 1.75rem;
-      border-radius: 25px;
-      font-size: 1.05rem;
-      line-height: 1.4;
-      position: relative;
-      max-width: 85%;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-    }
-
-    .bubble.user {
-      background: var(--wht);
-      align-self: flex-start;
-      border-bottom-left-radius: 4px;
-      border: 1px solid var(--soft-border);
-    }
-
-    .bubble.howard {
-      background: var(--y);
-      color: var(--blk);
-      align-self: flex-end;
-      border-bottom-right-radius: 4px;
-      font-weight: 500;
-    }
-
-    /* THE CORE VALUES - TEXT FOCUS */
-    .value-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      margin-bottom: 120px;
-    }
-
-    .value-item h3 {
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
-      color: var(--blk);
-    }
-
-    .value-item p {
-      line-height: 1.7;
-      font-size: 1.1rem;
-    }
-
-    /* THE PITCH - PRIVACY IS PEACE OF MIND */
-    .peace-section {
-      background: var(--blk);
-      color: var(--wht);
-      padding: 100px 0;
-      border-radius: 60px;
-      margin-bottom: 60px;
-      text-align: center;
-    }
-
-    .peace-section h2 {
-      font-size: 3rem;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.5rem;
-    }
-
-    .btn-homey {
-      display: inline-block;
-      padding: 1.2rem 2.5rem;
-      background: var(--y);
-      color: var(--blk);
-      border-radius: 100px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform 0.2s ease;
-    }
-
-    .btn-homey:hover {
-      transform: translateY(-2px);
-    }
-
-    /* ANIMATIONS */
-    .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
+    .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
     .reveal.active { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 768px) {
-      .hardware-showcase { flex-direction: column; text-align: center; padding: 2rem; }
-      .hardware-text { text-align: center; }
-      .value-grid { grid-template-columns: 1fr; }
-      .hero-home h1 { font-size: 3rem; }
+      .value-grid, .hardware-showcase { grid-template-columns: 1fr; flex-direction: column; }
+      .comp-table { font-size: 0.9rem; }
     }
   </style>
 </head>
 
 <body>
-
-  <header>
-    <div class="container navbar">
-      <a href="../index.html" class="logo">
-        <img src="../logo-light.png" alt="Howard AI Logo">
-      </a>
-      <nav class="main-nav">
-        <div class="nav-item"><a href="../index.html">Home</a></div>
-        <div class="nav-item">
-          <a href="#">About</a>
-          <div class="dropdown">
-            <a href="../about/index.html">Overview</a>
-            <a href="../about/leadership.html">Leadership</a>
-            <a href="../about/newsroom.html">Newsroom</a>
-            <a href="../about/investors.html">Investors</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="#">Store</a>
-          <div class="dropdown">
-            <a href="../store/index.html">All Products</a>
-            <a href="../store/home.html">Howard Home</a>
-            <a href="../store/pro.html">Howard Pro</a>
-            <a href="../store/enterprise.html">Enterprise</a>
-          </div>
-        </div>
-        <div class="nav-item">
-          <a href="#">Support</a>
-          <div class="dropdown">
-            <a href="../support/contact.html">Contact</a>
-            <a href="../support/about-support.html">About Support</a>
-            <a href="../support/faqs.html">FAQs</a>
-          </div>
-        </div>
-      </nav>
-
-      <button class="mobile-menu-btn" id="mobileMenuBtn">
-        <span></span>
-        <span></span>
-      </button>
-
-      <div class="mobile-menu" id="mobileMenu">
-        <a href="../index.html">Home</a>
-
-        <details>
-          <summary>About</summary>
-          <div class="mobile-submenu">
-            <a href="../about/index.html">Overview</a>
-            <a href="../about/leadership.html">Leadership</a>
-            <a href="../about/newsroom.html">Newsroom</a>
-            <a href="../about/investors.html">Investors</a>
-          </div>
-        </details>
-
-        <details>
-          <summary>Store</summary>
-          <div class="mobile-submenu">
-            <a href="../store/index.html">All Products</a>
-            <a href="../store/home.html">Howard Home</a>
-            <a href="../store/pro.html">Howard Pro</a>
-            <a href="../store/enterprise.html">Enterprise</a>
-          </div>
-        </details>
-
-        <details>
-          <summary>Support</summary>
-          <div class="mobile-submenu">
-            <a href="../support/contact.html">Contact</a>
-            <a href="../support/about-support.html">About Support</a>
-            <a href="../support/faqs.html">FAQs</a>
-          </div>
-        </details>
-      </div>
-    </div>
-  </header>
 
   <main class="home-page">
     
@@ -296,54 +92,104 @@
       <div class="home-container">
         <span class="home-badge reveal">Now accepting Houston waitlist</span>
         <h1 class="reveal">Welcome home,<br>Howard.</h1>
-        <p class="reveal">The locally-hosted assistant that lives in your home, keeps your secrets, and handles your "to-do" list so you don't have to.</p>
-      </div>
-    </section>
-
-    <section class="home-container">
-      <div class="hardware-showcase reveal">
-        
-        <div class="hardware-text">
-          <div class="howard-box-mockup">
-            <i class="ti ti-home-heart" style="font-size: 3rem; color: #fff;"></i>
-          </div>
-          <h2 style="color:var(--blk); margin-bottom: 0.5rem;">Installed in person.</h2>
-          <p style="color:var(--warm-text); font-size: 1.1rem; opacity: 0.8;">A friendly local face will set Howard up in your home, ensuring your network is secure and everything is ready to go.</p>
-        </div>
-
-        <div class="hardware-image-side">
-          <img src="../installation-photo.png" alt="Howard Installation" class="large-square-img">
-        </div>
-
+        <p class="reveal">A locally-hosted AI assistant that lives in your home, keeps your secrets, and manages your life across all your favorite apps.</p>
       </div>
     </section>
 
     <section class="home-container">
       <div class="conversation-stream">
-        <div class="bubble user reveal">"Hey Howard, could you find a local plumber for the kitchen leak and book them for tomorrow morning?"</div>
-        <div class="bubble howard reveal">"Of course. I've found a top-rated plumber in The Woodlands. They're coming at 9:00 AM. I've sent you the confirmation."</div>
-        <div class="bubble user reveal">"Also, I think we're paying too much for electricity. Can you check?"</div>
-        <div class="bubble howard reveal">"I'm on it. I’m analyzing your last 3 months of usage and comparing Houston providers now."</div>
+        <div class="bubble user reveal">Book a 2 day trip this weekend to the Bahamas.</div>
+        <div class="bubble howard reveal">On it. I'll give you a full itinerary and purchases for review in an hour.</div>
+        <div class="bubble user reveal">Check my inbox and junk folders for any important emails and reply to them.</div>
+        <div class="bubble howard reveal">Found a priority invite from your HOA and a billing update. I've drafted replies for your approval.</div>
+        <div class="bubble user reveal">Look at my energy bill and give me some ways to save.</div>
+        <div class="bubble howard reveal">I've analyzed your usage. Switching to a night-time plan could save you $45/mo based on your HVAC habits.</div>
+      </div>
+    </section>
+
+    <section class="roles-section" id="rolesScrollSection">
+      <div class="roles-container">
+        <p class="roles-intro">Howard is your</p>
+        <span class="role-title" id="dynamicRoleTitle">Personal Assistant</span>
+      </div>
+    </section>
+
+    <section class="home-container">
+      <div class="methods-grid-section reveal">
+        <h2>Talk to Howard anywhere.</h2>
+        <div class="logo-cloud">
+          <div class="logo-item"><i class="ti ti-messages"></i><span>iMessage</span></div>
+          <div class="logo-item"><i class="ti ti-brand-whatsapp"></i><span>WhatsApp</span></div>
+          <div class="logo-item"><i class="ti ti-mail"></i><span>Gmail</span></div>
+          <div class="logo-item"><i class="ti ti-printer"></i><span>Fax</span></div>
+          <div class="logo-item"><i class="ti ti-brand-telegram"></i><span>Telegram</span></div>
+          <div class="logo-item"><i class="ti ti-brand-messenger"></i><span>Messenger</span></div>
+          <div class="logo-item"><i class="ti ti-cloud"></i><span>iCloud</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-container">
+      <div class="comparison-section reveal">
+        <h2>How we compare.</h2>
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Big Tech AI</th>
+              <th>Howard Home</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Data Location</td>
+              <td>Public Cloud</td>
+              <td><strong>Your Living Room</strong></td>
+            </tr>
+            <tr>
+              <td>Makes Phone Calls</td>
+              <td>No</td>
+              <td><i class="ti ti-check"></i> Yes</td>
+            </tr>
+            <tr>
+              <td>Personal Spending Card</td>
+              <td>No</td>
+              <td><i class="ti ti-check"></i> Yes</td>
+            </tr>
+            <tr>
+              <td>Privacy Model</td>
+              <td>Ad-Supported</td>
+              <td><strong>Subscription Only</strong></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
     <section class="home-container">
       <div class="value-grid">
         <div class="value-item reveal">
-          <h3>Your data stays home.</h3>
-          <p>Unlike other AIs that send your voice and requests to a giant data center, Howard lives on a dedicated box in your house. He works for you, and only you.</p>
+          <h3>Local Compute.</h3>
+          <p>The "Brain" is a physical node in your house. Your voice and data never leave your walls for training or advertising.</p>
         </div>
         <div class="value-item reveal">
-          <h3>Actually gets it done.</h3>
-          <p>Howard doesn't just give you "tips." He has his own phone number and spending card to actually book the flight, buy the groceries, or call the repairman.</p>
+          <h3>Real World Action.</h3>
+          <p>Howard has his own secure spending card and phone number. He can call a plumber or buy flights so you don't have to.</p>
         </div>
-        <div class="value-item reveal">
-          <h3>Vertically Integrated.</h3>
-          <p>From the hardware build to the Ford Transit van that pulls into your driveway, we handle every single step. No third-party contractors, just Howard AI experts.</p>
+      </div>
+    </section>
+
+    <section class="home-container">
+      <div class="hardware-showcase reveal">
+        <div class="hardware-text">
+          <div class="howard-box-mockup">
+            <i class="ti ti-home-heart" style="font-size: 2.5rem; color: #fff;"></i>
+          </div>
+          <h2 style="color:var(--blk); margin-bottom: 0.5rem;">Installed in person.</h2>
+          <p style="opacity: 0.8; line-height: 1.6;">Our Houston team visits your home to install the Privacy Node, secure your network, and ensure Howard knows exactly how to help your family.</p>
         </div>
-        <div class="value-item reveal">
-          <h3>The "Unplug" Promise.</h3>
-          <p>We believe in privacy you can touch. If you ever want Howard to stop listening, just pull the plug. It’s that simple.</p>
+        <div class="hardware-image-side">
+          <img src="../installation-photo.png" alt="Installation" class="large-square-img">
         </div>
       </div>
     </section>
@@ -351,74 +197,41 @@
     <section class="home-container">
       <div class="peace-section reveal">
         <h2>Ready for a little more help?</h2>
-        <p style="margin-bottom: 2.5rem; opacity: 0.8; font-size: 1.1rem;">Howard Home starts at $3,000 + $100/mo.<br>Includes professional installation & local support.</p>
+        <p style="margin-bottom: 2.5rem; opacity: 0.8;">Starts at $3,000 + $100/mo.</p>
         <a href="../support/contact.html" class="btn-homey">Join the Houston Batch</a>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <img src="../logo-light.png" alt="Howard AI Logo" class="footer-logo">
-        <p class="footer-copyright">Copyright Placeholder — Howard AI</p>
-        <p class="footer-description">Howard AI builds locally hosted AI assistants for Houston homes and businesses.</p>
-        <div class="footer-socials">
-          <a href="https://instagram.com" target="_blank"><img src="../instagram.png" alt="Instagram"></a>
-          <a href="https://linkedin.com" target="_blank"><img src="../linkedin.png" alt="LinkedIn"></a>
-          <a href="https://x.com" target="_blank"><img src="../x.png" alt="X"></a>
-        </div>
-      </div>
-      
-      <div class="footer-links-grid">
-        <div class="footer-column">
-          <h3>About</h3>
-          <a href="../about/index.html">Overview</a>
-          <a href="../about/leadership.html">Leadership</a>
-          <a href="../about/newsroom.html">Newsroom</a>
-          <a href="../about/investors.html">Investors</a>
-        </div>
-        <div class="footer-column">
-          <h3>Store</h3>
-          <a href="../store/index.html">All Products</a>
-          <a href="../store/home.html">Howard Home</a>
-          <a href="../store/pro.html">Howard Pro</a>
-          <a href="../store/enterprise.html">Enterprise</a>
-        </div>
-        <div class="footer-column">
-          <h3>Support</h3>
-          <a href="../support/contact.html">Contact</a>
-          <a href="../support/about-support.html">About Support</a>
-          <a href="../support/faqs.html">FAQs</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
   <script>
-    // MOBILE MENU LOGIC
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenuBtn.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-    });
-
-    // REVEAL ANIMATION
+    // Reveal Script
     const reveal = () => {
-      const reveals = document.querySelectorAll('.reveal');
-      reveals.forEach(el => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-        if (elementTop < windowHeight - 100) {
-          el.classList.add('active');
-        }
+      document.querySelectorAll('.reveal').forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active');
       });
     }
     window.addEventListener('scroll', reveal);
     reveal();
+
+    // Role Scroll Script
+    const roles = ["Personal Assistant", "Trip Planner", "Financial Consultant", "Digital Receptionist"];
+    const roleTitle = document.getElementById('dynamicRoleTitle');
+    const rolesSection = document.getElementById('rolesScrollSection');
+
+    window.addEventListener('scroll', () => {
+      const rect = rolesSection.getBoundingClientRect();
+      const progress = Math.max(0, Math.min(1, -rect.top / (rect.height - window.innerHeight / 2)));
+      const index = Math.min(roles.length - 1, Math.floor(progress * roles.length));
+      
+      if (roleTitle.innerText !== roles[index]) {
+        roleTitle.style.opacity = 0;
+        setTimeout(() => {
+          roleTitle.innerText = roles[index];
+          roleTitle.style.opacity = 1;
+        }, 150);
+      }
+    });
   </script>
 
 </body>
