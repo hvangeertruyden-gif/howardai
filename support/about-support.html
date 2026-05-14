@@ -1,180 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Support — Howard AI</title>
-    
-    <link rel="icon" type="image/png" href="../favicon.png">
-    <link rel="stylesheet" href="../assets/style.css" />
-    
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 
-    <style>
-        :root {
-            --navy: #1C2833;
-            --slate: #2E4053;
-            --silver: #AAB7B8;
-            --light-gray: #D5DBDB;
-            --off-white: #F4F6F6;
-            --howard-yellow: #EBC736;
-            --black: #0D0D0D;
-            --radius: 24px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        body {
-            background-color: var(--black);
-            color: var(--off-white);
-            margin: 0;
-            font-family: 'DM Sans', sans-serif;
-        }
+  <title>About Support — Howard AI</title>
 
-        /* Hero Section */
-        .support-hero {
-            padding: 160px 10% 100px 10%;
-            background-color: var(--navy);
-            border-bottom-left-radius: var(--radius);
-            border-bottom-right-radius: var(--radius);
-        }
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../assets/style.css" />
 
-        .hero-tag {
-            color: var(--howard-yellow);
-            text-transform: uppercase;
-            letter-spacing: 0.2rem;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 
-        .support-hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 800;
-            letter-spacing: -0.04em;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
+  <style>
 
-        .support-hero p {
-            max-width: 600px;
-            font-size: 1.25rem;
-            color: var(--silver);
-            line-height: 1.6;
-        }
+    :root {
+      --y:#EBC736;
+      --blk:#0D0D0D;
+      --wht:#FFFFFF;
+      --warm:#4A4439;
+      --cream:#F9F7F2;
+      --soft-border: rgba(74, 68, 57, 0.08);
+    }
 
-        /* Installation Section */
-        .white-glove {
-            padding: 120px 10%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
+    body {
+      background: var(--cream);
+      color: var(--warm);
+      overflow-x: hidden;
+    }
 
-        .van-container {
-            position: relative;
-        }
+    .support-page {
+      font-family:'DM Sans', sans-serif;
+    }
 
-        .van-image {
-            width: 100%;
-            border-radius: var(--radius);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            display: block;
-        }
+    .support-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
 
-        .white-glove h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.03em;
-        }
+    /* HERO */
 
-        .white-glove p {
-            color: var(--silver);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
+    .support-hero {
+      padding: 120px 0 80px;
+      text-align: center;
+    }
 
-        /* Support Tiers */
-        .support-grid-section {
-            padding: 100px 10%;
-            background-color: #111;
-        }
+    .support-badge {
+      display: inline-block;
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
+      padding: 0.55rem 1.2rem;
 
-        .support-card {
-            background: var(--navy);
-            padding: 50px 40px;
-            border-radius: var(--radius);
-            transition: transform 0.3s ease;
-        }
+      background: white;
 
-        .support-card:hover {
-            transform: translateY(-10px);
-        }
+      border: 1px solid var(--soft-border);
 
-        .support-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--howard-yellow);
-        }
+      border-radius: 999px;
 
-        .support-card p {
-            color: var(--silver);
-            line-height: 1.6;
-        }
+      font-size: 0.85rem;
+      font-weight: 600;
 
-        /* Responsive */
-        @media (max-width: 1000px) {
-            .white-glove { grid-template-columns: 1fr; gap: 40px; }
-            .grid { grid-template-columns: 1fr; }
-            .support-hero { padding: 120px 5% 60px 5%; }
-        }
-    </style>
+      color: var(--y);
+
+      margin-bottom: 2rem;
+    }
+
+    .support-hero h1 {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+
+      line-height: 0.98;
+
+      letter-spacing: -0.05em;
+
+      color: var(--blk);
+
+      margin-bottom: 1.5rem;
+    }
+
+    .support-hero p {
+      max-width: 700px;
+
+      margin: 0 auto;
+
+      font-size: 1.2rem;
+
+      line-height: 1.7;
+
+      opacity: 0.9;
+    }
+
+    /* INSTALLATION PHOTO */
+
+    .support-photo {
+      margin-bottom: 120px;
+    }
+
+    .support-photo img {
+      width: 100%;
+
+      border-radius: 40px;
+
+      display: block;
+
+      box-shadow:
+        0 20px 40px rgba(0,0,0,0.04);
+
+      border: 1px solid var(--soft-border);
+    }
+
+    /* SUPPORT GRID */
+
+    .support-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 2rem;
+
+      margin-bottom: 120px;
+    }
+
+    .support-card {
+      background: white;
+
+      border-radius: 32px;
+
+      padding: 2.5rem;
+
+      border: 1px solid var(--soft-border);
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.02);
+    }
+
+    .support-card h3 {
+      font-size: 1.6rem;
+
+      color: var(--blk);
+
+      margin-bottom: 1rem;
+
+      letter-spacing: -0.03em;
+    }
+
+    .support-card p {
+      line-height: 1.8;
+
+      font-size: 1.05rem;
+    }
+
+    /* LOCAL SECTION */
+
+    .local-section {
+      background: var(--blk);
+
+      color: white;
+
+      border-radius: 60px;
+
+      padding: 100px 60px;
+
+      text-align: center;
+
+      margin-bottom: 60px;
+    }
+
+    .local-section h2 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+
+      letter-spacing: -0.04em;
+
+      margin-bottom: 1.5rem;
+    }
+
+    .local-section p {
+      max-width: 700px;
+
+      margin: 0 auto 2.5rem;
+
+      line-height: 1.8;
+
+      opacity: 0.82;
+
+      font-size: 1.1rem;
+    }
+
+    .support-btn {
+      display: inline-block;
+
+      padding: 1.1rem 2.4rem;
+
+      background: var(--y);
+
+      color: var(--blk);
+
+      border-radius: 999px;
+
+      font-weight: 700;
+
+      transition: 0.2s ease;
+    }
+
+    .support-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* REVEAL */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .local-section {
+        padding: 70px 30px;
+      }
+
+    }
+
+  </style>
+
 </head>
 
 <body>
 
+  <!-- HEADER -->
+
   <header>
+
     <div class="container navbar">
+
       <a href="../index.html" class="logo">
         <img src="../logo-light.png" alt="Howard AI Logo">
       </a>
 
       <nav class="main-nav">
-        <div class="nav-item"><a href="../index.html">Home</a></div>
+
         <div class="nav-item">
+          <a href="../index.html">Home</a>
+        </div>
+
+        <div class="nav-item">
+
           <a href="#">About</a>
+
           <div class="dropdown">
             <a href="../about/index.html">Overview</a>
             <a href="../about/leadership.html">Leadership</a>
             <a href="../about/newsroom.html">Newsroom</a>
             <a href="../about/investors.html">Investors</a>
           </div>
+
         </div>
+
         <div class="nav-item">
+
           <a href="#">Store</a>
+
           <div class="dropdown">
             <a href="../store/index.html">All Products</a>
             <a href="../store/home.html">Howard Home</a>
             <a href="../store/pro.html">Howard Pro</a>
             <a href="../store/enterprise.html">Enterprise</a>
           </div>
+
         </div>
+
         <div class="nav-item">
+
           <a href="#">Support</a>
+
           <div class="dropdown">
             <a href="../support/contact.html">Contact</a>
             <a href="../support/about-support.html">About Support</a>
             <a href="../support/faqs.html">FAQs</a>
           </div>
+
         </div>
+
       </nav>
 
       <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -183,120 +301,296 @@
       </button>
 
       <div class="mobile-menu" id="mobileMenu">
+
         <a href="../index.html">Home</a>
+
         <details>
           <summary>About</summary>
+
           <div class="mobile-submenu">
             <a href="../about/index.html">Overview</a>
             <a href="../about/leadership.html">Leadership</a>
             <a href="../about/newsroom.html">Newsroom</a>
             <a href="../about/investors.html">Investors</a>
           </div>
+
         </details>
+
         <details>
+
           <summary>Store</summary>
+
           <div class="mobile-submenu">
             <a href="../store/index.html">All Products</a>
             <a href="../store/home.html">Howard Home</a>
             <a href="../store/pro.html">Howard Pro</a>
             <a href="../store/enterprise.html">Enterprise</a>
           </div>
+
         </details>
+
         <details>
+
           <summary>Support</summary>
+
           <div class="mobile-submenu">
             <a href="../support/contact.html">Contact</a>
             <a href="../support/about-support.html">About Support</a>
             <a href="../support/faqs.html">FAQs</a>
           </div>
+
         </details>
+
       </div>
+
     </div>
+
   </header>
 
-  <main>
+  <!-- PAGE -->
+
+  <main class="support-page">
+
+    <!-- HERO -->
+
     <section class="support-hero">
-        <span class="hero-tag">Support</span>
-        <h1>Private AI,<br>Professionally Handled.</h1>
-        <p>Your data stays on your property. Our team makes sure the hardware that powers it is installed, optimized, and maintained by hand.</p>
+
+      <div class="support-container">
+
+        <div class="support-badge reveal">
+          Howard Support
+        </div>
+
+        <h1 class="reveal">
+          Support that<br>
+          shows up.
+        </h1>
+
+        <p class="reveal">
+          Howard AI support is built around real people, local technicians, and direct communication — not ticket queues or outsourced call centers.
+        </p>
+
+      </div>
+
     </section>
 
-    <section class="white-glove">
-        <div class="van-container">
-            <img src="installation-photo.png" alt="Howard AI Installation Van" class="van-image">
-        </div>
-        <div class="white-glove-content">
-            <span class="hero-tag">Installation</span>
-            <h2>White-Glove Setup</h2>
-            <p>We don't ship Howard in a cardboard box for you to figure out. Every deployment includes on-site installation by a Houston-based technician to ensure your local network is secure and Howard is calibrated to your space.</p>
-            <p>From rack-mounting Pro units in your office to setting up Home units in your living room, we handle the cables so you can handle the intelligence.</p>
-        </div>
+    <!-- PHOTO -->
+
+    <section class="support-container">
+
+      <div class="support-photo reveal">
+
+        <img
+          src="../installation-photo.png"
+          alt="Howard AI Installation Team"
+        >
+
+      </div>
+
     </section>
 
-    <section class="support-grid-section">
-        <div class="grid">
-            <div class="support-card">
-                <h3>Local Dispatch</h3>
-                <p>If your hardware needs attention, we don't send you a shipping label. We send a person. Our technicians are based right here in Houston.</p>
-            </div>
-            <div class="support-card">
-                <h3>Network Health</h3>
-                <p>We provide ongoing monitoring for your local GPU cluster to ensure Howard is running at peak efficiency without leaving your private network.</p>
-            </div>
-            <div class="support-card">
-                <h3>Hardware Warranty</h3>
-                <p>All Howard Home and Pro units are covered by a comprehensive local hardware warranty. If a component fails, we replace it on-site.</p>
-            </div>
+    <!-- SUPPORT GRID -->
+
+    <section class="support-container">
+
+      <div class="support-grid">
+
+        <div class="support-card reveal">
+
+          <h3>
+            Local Technicians
+          </h3>
+
+          <p>
+            Every Howard installation and support visit is handled by a Houston-based technician. No third-party contractors. No shipping hardware across the country.
+          </p>
+
         </div>
+
+        <div class="support-card reveal">
+
+          <h3>
+            Real Communication
+          </h3>
+
+          <p>
+            Call or text our support line and a real person answers. If your issue requires a visit, we dispatch someone directly to your home or office.
+          </p>
+
+        </div>
+
+        <div class="support-card reveal">
+
+          <h3>
+            Built Around Privacy
+          </h3>
+
+          <p>
+            Because Howard runs locally on hardware inside your building, support is designed differently. Your data remains yours and never sits on a remote server.
+          </p>
+
+        </div>
+
+        <div class="support-card reveal">
+
+          <h3>
+            Ongoing Maintenance
+          </h3>
+
+          <p>
+            Your subscription includes updates, hardware checks, technician dispatch, and long-term maintenance so Howard continues running smoothly over time.
+          </p>
+
+        </div>
+
+      </div>
+
     </section>
+
+    <!-- LOCAL -->
+
+    <section class="support-container">
+
+      <div class="local-section reveal">
+
+        <h2>
+          Houston-first support.
+        </h2>
+
+        <p>
+          Howard AI was built around the idea that support should feel personal again. Local technicians. Local phone numbers. Real people who know your system.
+        </p>
+
+        <a
+          href="../support/contact.html"
+          class="support-btn"
+        >
+          Contact Support
+        </a>
+
+      </div>
+
+    </section>
+
   </main>
 
+  <!-- FOOTER -->
+
   <footer class="site-footer">
+
     <div class="container footer-grid">
+
       <div class="footer-brand">
-        <img src="../logo-light.png" alt="Howard AI Logo" class="footer-logo">
-        <p class="footer-copyright">Copyright 2026 — Howard AI</p>
-        <p class="footer-description">Howard AI builds locally hosted AI assistants for Houston homes and businesses.</p>
+
+        <img
+          src="../logo-light.png"
+          alt="Howard AI Logo"
+          class="footer-logo"
+        >
+
+        <p class="footer-copyright">
+          Copyright Placeholder — Howard AI
+        </p>
+
+        <p class="footer-description">
+          Howard AI builds locally hosted AI assistants for Houston homes and businesses.
+        </p>
+
         <div class="footer-socials">
-          <a href="https://instagram.com" target="_blank"><img src="../instagram.png" alt="Instagram"></a>
-          <a href="https://linkedin.com" target="_blank"><img src="../linkedin.png" alt="LinkedIn"></a>
-          <a href="https://x.com" target="_blank"><img src="../x.png" alt="X"></a>
+
+          <a href="https://instagram.com" target="_blank">
+            <img src="../instagram.png" alt="Instagram">
+          </a>
+
+          <a href="https://linkedin.com" target="_blank">
+            <img src="../linkedin.png" alt="LinkedIn">
+          </a>
+
+          <a href="https://x.com" target="_blank">
+            <img src="../x.png" alt="X">
+          </a>
+
         </div>
+
       </div>
 
       <div class="footer-links-grid">
+
         <div class="footer-column">
+
           <h3>About</h3>
+
           <a href="../about/index.html">Overview</a>
           <a href="../about/leadership.html">Leadership</a>
           <a href="../about/newsroom.html">Newsroom</a>
           <a href="../about/investors.html">Investors</a>
+
         </div>
+
         <div class="footer-column">
+
           <h3>Store</h3>
+
           <a href="../store/index.html">All Products</a>
           <a href="../store/home.html">Howard Home</a>
           <a href="../store/pro.html">Howard Pro</a>
           <a href="../store/enterprise.html">Enterprise</a>
+
         </div>
+
         <div class="footer-column">
+
           <h3>Support</h3>
+
           <a href="../support/contact.html">Contact</a>
           <a href="../support/about-support.html">About Support</a>
           <a href="../support/faqs.html">FAQs</a>
+
         </div>
+
       </div>
+
     </div>
+
   </footer>
 
+  <!-- MOBILE MENU -->
+
   <script>
+
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
 
     mobileMenuBtn.addEventListener('click', () => {
+
       mobileMenuBtn.classList.toggle('active');
       mobileMenu.classList.toggle('active');
+
     });
+
+    /* REVEAL */
+
+    const reveal = () => {
+
+      const reveals = document.querySelectorAll('.reveal');
+
+      reveals.forEach(el => {
+
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100) {
+          el.classList.add('active');
+        }
+
+      });
+
+    }
+
+    window.addEventListener('scroll', reveal);
+
+    reveal();
+
   </script>
 
 </body>
